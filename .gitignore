@@ -1,0 +1,19 @@
+# NPM
+node_modules
+
+# OS or Editor folders
+.DS_Store
+._*
+Thumbs.db
+*.sublime-workspace
+npm-debug.log
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+.idea
+appdirectory-build
+pids
+logs
+results

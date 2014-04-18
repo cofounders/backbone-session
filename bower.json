@@ -1,0 +1,27 @@
+{
+  "name": "backbone-session",
+  "main": "backbone-session.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cofounders/backbone-session",
+  "authors": [
+    "Sebastiaan Deckers <seb@ninja.sg>"
+  ],
+  "description": "Flexible and simple session management for Backbone apps",
+  "keywords": [
+    "backbone",
+    "session",
+    "authentication"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "/*.json",
+    "/*.md",
+    "/*.txt",
+    "Gruntfile.js",
+    "node_modules",
+    "bower_components",
+    "grunt",
+    "tests"
+  ]
+}

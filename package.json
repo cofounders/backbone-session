@@ -1,0 +1,35 @@
+{
+  "name": "backbone-session",
+  "description": "Flexible and simple session management for Backbone apps",
+  "version": "0.0.1",
+  "author": {
+    "name": "Sebastiaan Deckers",
+    "email": "seb@ninja.sg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cofounders/backbone-session.git"
+  },
+  "licenses": [{
+    "type": "MIT"
+  }],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt": "0.4.1",
+    "grunt-cli": "~0.1",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-nodeunit": "0.2.2",
+    "load-grunt-config": "0.7.0",
+    "requirejs": "*",
+    "underscore": "*"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "backbone",
+    "session",
+    "authentication"
+  ]
+}
