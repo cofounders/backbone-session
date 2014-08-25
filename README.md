@@ -2,6 +2,36 @@
 
 Flexible and simple session management for Backbone apps
 
+## Usage
+
+```javascript
+// Using CommonJS
+var Session = require('backbone-session');
+
+// or AMD
+define(['backbone-session'], function (Session) {
+  // ...
+})
+
+// Extend from Session to implement your API's behaviour
+var Account = Session.extend({
+  signIn: function () {},
+  signOut: function () {},
+  getAuthStatus: function () {}
+});
+
+// Using the custom Account implementation
+var session = new Account();
+session.fetch()
+  .then(session.getAuthStatus)
+  .then(function () {
+    console.log('Logged in as %s', session.get('name'));
+  })
+  .catch(function () {
+    console.log('Not yet logged in!');
+  });
+```
+
 ## Why?
 
 Using a simple facade that feels more *Backboney* helps avoid third party SDKs and APIs leaking into your app code. Your app will be less locked-in to your authentication provider.
@@ -58,7 +88,7 @@ session.signOut().then(function () {
 ### getAuthStatus([options])
 
 Returns: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
- 
+
 Example:
 ```js
 session.getAuthStatus()
@@ -68,6 +98,32 @@ session.getAuthStatus()
 .catch(function () {
   // The user is not yet logged in ...
 });
+```
+
+### Model & Collection
+
+A basic Backbone Model and Collection to extend and inherit from. Session implementations can replace them with a patched Model or Collection to seamlessly handle network authentication, error handling, logging, etc. Session consumers should extend their models from this base.
+
+Example:
+```js
+// Session implementation
+var MyAPI = Backbone.Session.extend({
+  Model: Backbone.Model.extend({
+    sync: function () {
+      console.log('Syncing...');
+      return Backbone.Model.sync.apply(this, arguments);
+    }
+  })
+});
+
+// Session consumer
+var session = new MyAPI();
+var MyModel = session.prototype.Model.extend({
+  url: '/foo/bar'
+});
+
+var item = new MyModel();
+item.fetch(); // prints: Syncing...
 ```
 
 ## Installation
@@ -94,36 +150,6 @@ or
 
 ```html
 <script src="backbone-session.js"></script>
-```
-
-## Usage
-
-```javascript
-// Using CommonJS
-var Session = require('backbone-session');
-
-// or AMD
-define(['backbone-session'], function (Session) {
-  // ...
-})
-
-// Extend from Session to implement your API's behaviour
-var Account = Session.extend({
-  signIn: function () {},
-  signOut: function () {},
-  getAuthStatus: function () {}
-});
-
-// Using the custom Account implementation
-var session = new Account();
-session.fetch()
-  .then(session.getAuthStatus)
-  .then(function () {
-    console.log('Logged in as %s', session.get('name'));
-  })
-  .catch(function () {
-    console.log('Not yet logged in!');
-  });
 ```
 
 ## License

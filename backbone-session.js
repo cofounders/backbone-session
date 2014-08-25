@@ -57,6 +57,8 @@
       return Promise.reject(Error(
         'Override the getAuthStatus method'
       ));
-    }
+    },
+    Model: Backbone.Model,
+    Collection: Backbone.Collection
   });
 }));
