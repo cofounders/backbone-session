@@ -4,7 +4,7 @@
   } else if (typeof exports === 'object') {
     module.exports = factory(require('underscore'), require('backbone'));
   } else {
-    root.urlbuilder = factory(root._, root.Backbone);
+    root.BackboneSession = factory(root._, root.Backbone);
   }
 }(this, function (_, Backbone) {
   return Backbone.Model.extend({
