@@ -27,7 +27,7 @@ session.fetch()
   .then(function () {
     console.log('Logged in as %s', session.get('name'));
   })
-  .catch(function () {
+  .fail(function () {
     console.log('Not yet logged in!');
   });
 ```
@@ -60,7 +60,7 @@ Either a Function or a String that represents the key used to access `localStora
 
 ### signIn([options])
 
-Returns: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+Returns: [jQuery Promise](https://api.jquery.com/promise/)
 
 Example:
 ```js
@@ -69,14 +69,14 @@ session.signIn({
   password: 'hunter2'
 }).then(function () {
   // Do stuff after logging in ...
-}).catch(function () {
+}).fail(function () {
   // Handle the failed log in attempt ...
 });
 ```
 
 ### signOut([options])
 
-Returns: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+Returns: [jQuery Promise](https://api.jquery.com/promise/)
 
 Example:
 ```js
@@ -87,7 +87,7 @@ session.signOut().then(function () {
 
 ### getAuthStatus([options])
 
-Returns: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+Returns: [jQuery Promise](https://api.jquery.com/promise/)
 
 Example:
 ```js
@@ -95,7 +95,7 @@ session.getAuthStatus()
 .then(function () {
   // The user is already logged in ...
 })
-.catch(function () {
+.fail(function () {
   // The user is not yet logged in ...
 });
 ```

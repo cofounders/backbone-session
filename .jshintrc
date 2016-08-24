@@ -1,9 +1,16 @@
 {
+  "globals": {
+    "localStorage": false,
+    "define": false,
+    "module": false,
+    "require": false,
+    "exports": false,
+    "__dirname": false
+  },
   "bitwise": false,
   "camelcase": false,
   "curly": true,
   "eqeqeq": true,
-  "esnext": true,
   "forin": true,
   "immed": true,
   "indent": 2,

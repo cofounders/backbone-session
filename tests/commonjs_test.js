@@ -1,5 +1,3 @@
-'use strict';
-
 exports['CommonJS compatibility'] = {
 
   default: function (test) {
