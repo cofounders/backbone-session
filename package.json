@@ -1,7 +1,7 @@
 {
   "name": "backbone-session",
   "description": "Flexible and simple session management for Backbone apps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Sebastiaan Deckers",
     "email": "seb@ninja.sg"

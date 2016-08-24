@@ -1,10 +1,10 @@
 {
   "name": "backbone-session",
   "main": "backbone-session.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/cofounders/backbone-session",
   "authors": [
-    "Sebastiaan Deckers <seb@ninja.sg>"
+    "Sebastiaan Deckers <seb@ninja.sg>",
     "Émile Bergeron <ber.emile@prismalstudio.com>"
   ],
   "description": "Flexible and simple session management for Backbone apps",
